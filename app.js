@@ -42,7 +42,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
-const store = MongoStore.create({
+const store = MongoStore.default.create({
     mongoUrl: process.env.ATLASDB_URL,
     touchAfter: 24 * 60 * 60,
 });
