@@ -1,0 +1,173 @@
+body{
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+main{
+    flex: 1;
+}
+
+/* navbar */
+
+.navbar{
+    height: 5rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0);
+}
+.fa-compass{
+    color:rgb(255, 41, 41);
+    font-size: 2rem;
+}
+.nav-link{
+    color:#222222 !important;
+}
+.navbar-collapse{
+    background-color:#fff;
+}
+
+@media (max-width:991px){
+    .navbar-collapse{
+        padding:1rem;
+    }
+
+    .navbar-nav{
+        margin-top:10px;
+    }
+}
+
+/* footer */
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links ,
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.f-info-socials a{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: rgb(242, 242, 242) ;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: space-evenly;
+    box-shadow: 10px 0 10px black;
+}
+
+/* cards */
+
+.listing-card{
+    border: none !important;
+    /* width: 20rem; */
+    margin-bottom: 2rem;
+    border-radius: 1rem !important;
+    /* box-shadow: 2px 0 10px rgb(0, 0, 0); 
+    transition: all 0.2s linear !important;*/
+}
+
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    height: 20rem !important;
+    object-fit: cover !important;
+}
+
+.card-body{
+    padding: 0rem !important ;
+}
+.card-text p{   
+    font-weight: 400 !important;
+}
+
+.listing-links{
+    text-decoration: none;
+    /* border-radius: 5rem !important; */
+    
+}
+
+/* card Effexcts*/
+
+.card-img-overlay{
+    opacity: 0;
+    border-radius: 1rem !important;
+    
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
+/* .card:hover{
+    transform: scale(0.9,0.9);
+     box-shadow: 5px 0 25px rgb(130, 100, 22); *}  */
+     
+/* new page */
+.add-btn{
+    background-color:rgb(255, 41, 41) !important;
+    border: none !important;
+    transition: all 0.1s linear !important;
+}
+.add-btn:hover{
+    border: #222222;
+    box-shadow: 0 3px 7px black;
+    transform: scale(0.9,0.9);
+}
+/* Edit page*/
+.edit-btn{
+    background-color:rgb(255, 41, 41) !important;
+    border: none !important;
+    transition: all 0.1s linear !important;
+}
+.edit-btn:hover{
+    border: #222222;
+    box-shadow: 0 3px 7px black;
+    transform: scale(0.9,0.9);
+}
+.delet-btn{
+    background-color:rgb(12, 8, 8) !important;
+    border: none !important;
+    transition: all 0.1s linear !important;
+}
+.delet-btn:hover{
+    box-shadow: 0 3px 7px black;
+    transform: scale(0.9,0.9);
+}
+/* show page */
+.show-img{
+    height: 13vh;
+}
+
+.btns{
+    display: flex;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*Map  */
+
+#map{
+    height:400px;
+    width:100%;
+}
