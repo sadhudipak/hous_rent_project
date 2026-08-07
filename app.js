@@ -2,6 +2,7 @@ if(process.env.NODE_ENV != "production"){
     require('dotenv').config();
 }
 
+console.log(process.env.ATLASDB_URL);
 const express=require("express");
 const app=express();
 const mongoose = require("mongoose");
@@ -23,7 +24,6 @@ const userRouter=require("./routes/user.js");
 
 // const MONGO_URL="mongodb://127.0.0.1:27017/wanderlust"  ;
 const dbUrl=process.env.ATLASDB_URL;
-
 main().
 then(()=>{
     console.log("conection is successfully");
@@ -42,7 +42,7 @@ app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
-const store = MongoStore.default.create({
+const store = MongoStore.create({
     mongoUrl: process.env.ATLASDB_URL,
     touchAfter: 24 * 60 * 60,
 });
@@ -116,6 +116,8 @@ app.use((err,req,res,next)=>{
 });
 
 
-app.listen(8080, ()=>{
-    console.log("server is runnig");
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+    console.log(`Server running on ${port}`);
 });
