@@ -1,0 +1,226 @@
+/* ==========================================================
+   Wanderlust — Responsive / Mobile enhancements
+   Link this AFTER style.css and Bootstrap in boilerplate.ejs:
+   <link rel="stylesheet" href="/css/responsive.css">
+   ========================================================== */
+
+/* ---------- Global ---------- */
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+main.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ---------- Navbar ---------- */
+* footer */
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links ,
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.f-info-socials a{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: rgb(242, 242, 242) ;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: space-evenly;
+    box-shadow: 10px 0 10px black;
+}
+
+/* ---------- Filters row (index page) ---------- */
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter {
+  text-align: center;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  opacity: 0.7;
+  transition: opacity 0.15s ease;
+}
+
+.filter:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.filter p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+/* One scrollable row on mobile instead of wrapping to multiple lines */
+@media (max-width: 767px) {
+  #filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  #filters::-webkit-scrollbar {
+    display: none;
+  }
+  .filter {
+    flex: 0 0 auto;
+    margin-right: 1.5rem;
+    margin-top: 1rem;
+    scroll-snap-align: start;
+  }
+  .filter:first-child {
+    margin-left: 0.1rem;
+  }
+}
+
+/* ---------- Listing cards ---------- */
+.listing-card {
+  border: none;
+  margin-bottom: 1.5rem;
+}
+
+.card-img,
+.card-img-top {
+  height: 22rem;
+  object-fit: cover;
+  border-radius: 1rem !important;
+}
+
+@media (max-width: 767px) {
+  .card-img,
+  .card-img-top {
+    height: 14rem;
+  }
+}
+
+.listing-links {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card-img-overlay {
+  background: transparent;
+  height: fit-content;
+}
+
+.card-img-overlay i {
+  color: #fff;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
+}
+
+/* ---------- Show page ---------- */
+.show-img {
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.btns {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btns a,
+.btns button {
+  flex: 1;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .show-img {
+    height: 16rem;
+  }
+}
+
+#map {
+  width: 100%;
+  height: 22rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  #map {
+    height: 14rem;
+  }
+}
+
+/* Review cards wrap nicely on small screens */
+@media (max-width: 767px) {
+  .card.col-5 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+/* ---------- Forms (new / edit / login / signup) ---------- */
+@media (max-width: 767px) {
+  form .row > [class*="col-md-"] {
+    margin-bottom: 0 !important;
+  }
+  .add-btn,
+  .edit-btn:not(.btn-sm) {
+    width: 100%;
+  }
+}
+
+/** footer */
+
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+
+.f-info-links ,
+.f-info-socials,
+.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+}
+
+.f-info-socials a{
+    margin-left: 2rem;
+    font-size: 1.2rem;
+}
+
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: rgb(242, 242, 242) ;
+    display: flex;
+    flex-wrap:wrap ;
+    justify-content: center;
+    align-items: space-evenly;
+    box-shadow: 10px 0 10px black;
+}
