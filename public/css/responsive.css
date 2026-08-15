@@ -16,38 +16,99 @@ main.container {
 }
 
 /* ---------- Navbar ---------- */
-* footer */
-
-.f-info-links a{
-    text-decoration: none;
-    color: #222222;
+.navbar {
+  padding-top: 0.85rem;
+  padding-bottom: 0.85rem;
+  box-shadow: 0 10px 15px 0.5 black;
 }
 
-.f-info-links a:hover{
-    text-decoration: underline;
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.02em;
+  color: #222 !important;
 }
 
-.f-info-links ,
-.f-info-socials,
-.f-info-brand{
-    width: 100%;
-    vertical-align: middle;
+.navbar-brand i {
+  font-size: 1.6rem;
+  color: #ff385c;
 }
 
-.f-info-socials a{
-    margin-left: 2rem;
-    font-size: 1.2rem;
+.navbar-nav .nav-link {
+  color: #333;
+  font-weight: 500;
+  padding: 0.5rem 0.9rem !important;
+  position: relative;
+  transition: color 0.15s ease;
 }
 
-.f-info{
-    text-align: center;
-    height: 8rem;
-    background-color: rgb(242, 242, 242) ;
+.navbar-nav .nav-link:hover {
+  color: #ff385c;
+}
+
+/* underline sweep on hover, desktop only */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.3rem;
+    height: 2px;
+    background: #ff385c;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.2s ease;
+  }
+  .navbar-nav .nav-link:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.navbar-toggler {
+  border: none;
+  box-shadow: none !important;
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    padding: 0.5rem 0;
+  }
+  .navbar-nav.ms-auto {
+    text-align: left;
+  }
+  .navbar-collapse {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    margin-top: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  }
+  .navbar-collapse .navbar-nav .nav-link {
     display: flex;
-    flex-wrap:wrap ;
-    justify-content: center;
-    align-items: space-evenly;
-    box-shadow: 10px 0 10px black;
+    align-items: center;
+    padding: 0.85rem 0.5rem !important;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 0.95rem;
+  }
+  .navbar-collapse .navbar-nav .nav-link i {
+    width: 1.25rem;
+    text-align: center;
+    color: #ff385c;
+    font-size: 0.95rem;
+  }
+  .navbar-collapse .navbar-nav:last-child .nav-link:last-child {
+    border-bottom: none;
+  }
+  .navbar-collapse .navbar-nav.ms-auto {
+    margin-top: 0.25rem;
+    padding-top: 0.25rem;
+    border-top: 1px dashed #eee;
+  }
 }
 
 /* ---------- Filters row (index page) ---------- */
@@ -111,14 +172,7 @@ main.container {
   height: 22rem;
   object-fit: cover;
   border-radius: 1rem !important;
-}
-
-@media (max-width: 767px) {
-  .card-img,
-  .card-img-top {
-    height: 14rem;
-  }
-}
+} */
 
 .listing-links {
   text-decoration: none;
@@ -135,6 +189,11 @@ main.container {
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.6));
 }
 
+.card-img-overlay:hover{
+    opacity: 0.2;
+    background-color: white;
+}
+
 /* ---------- Show page ---------- */
 .show-img {
   height: 28rem;
@@ -149,8 +208,8 @@ main.container {
 
 .btns a,
 .btns button {
-  flex: 1;
-  text-align: center;
+  /* flex: 1; */
+  text-align:center;
 }
 
 @media (max-width: 767px) {
@@ -202,12 +261,16 @@ main.container {
     text-decoration: underline;
 }
 
-.f-info-links ,
+/* .f-info-links ,
 .f-info-socials,
 .f-info-brand{
     width: 100%;
     vertical-align: middle;
+    text-align: center;
 }
+.f-info-socials{
+  text-align: justify;
+} */
 
 .f-info-socials a{
     margin-left: 2rem;
@@ -223,4 +286,51 @@ main.container {
     justify-content: center;
     align-items: space-evenly;
     box-shadow: 10px 0 10px black;
+}
+
+.f-info-brand {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #222;
+  letter-spacing: 0.01em;
+  order: 2;
+}
+
+.f-info-socials i {
+    font-size: 1.05rem;
+    width: 2.1rem;
+    height: 2.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #e2e2e6;
+    color: #555;
+    transition: all 0.15s ease;
+}
+  
+.f-info-socials i:hover {
+    background: #ff385c;
+    border-color: #ff385c;
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-2px);
+}
+    
+.f-info-links {
+    order: 3;
+    display: flex;
+    gap: 1.25rem;
+}
+.f-info-links a {
+  color: #555;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+  
+.f-info-links a:hover {
+  color: #ff385c;
+  text-decoration: underline;
 }
